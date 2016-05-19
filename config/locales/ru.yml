@@ -1,0 +1,60 @@
+ru:
+  confirm: Вы уверены?
+  messages:
+    failures:
+      user_not_authenticated: Сначала авторизуйтесь
+      user_not_authorized: Вы не можете выполнить это действие
+    users:
+      create:
+        notice: Вы успешно зарегистрировались
+      update:
+        notice: Настройки успешно обновлены
+    user_sessions:
+      create:
+        notice: Вы вошли в систему!
+      destroy:
+        notice: Вы вышли из системы!
+    articles:
+      create:
+        notice: Статья успешно создана
+      update:
+        notice: Статья успешно обновлена
+      destroy:
+        notice: Статья успешно удалена
+        alert: Статью не удалось удалить
+  layouts:
+    application:
+      header:
+        menu:
+          statics: Верстка
+          new_article: Новая статья
+          articles: Мои статьи
+          profile: Настройки
+          login: Войти
+          logout: Выйти
+          signup: Регистрация
+  shared:
+    articles:
+      selected_tag: "Выбранный тэг:"
+    tagcloud:
+      title: Облако тэгов
+  articles:
+    index:
+      title:
+        current_user: Мои статьи
+        other_user: Статьи от %{author}
+    edit:
+      title: Редактирование статьи
+    new:
+      title: Новая статья
+    comments:
+      tree:
+        title: "Комментарии:"
+        add_comment: Оставить комментарий
+      item:
+        reply: Ответить
+  comments:
+    new:
+      title: Создать комментарий
+    edit:
+      title: Редактировать комментарий

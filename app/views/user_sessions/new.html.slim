@@ -1,0 +1,5 @@
+.m-login
+  = basic_form_for @user_session_form, url: user_sessions_path do |f|
+    = f.input :email
+    = f.input :password
+    = f.button :submit

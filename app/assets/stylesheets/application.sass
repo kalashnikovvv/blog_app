@@ -1,0 +1,27 @@
+@import reset
+@import font-awesome
+@import "compass/css3"
+@import "toastr"
+@import "jquery.fancybox"
+
+body
+  font-size: 16px
+  font-family: "Open Sans", Arial, sans-serif
+  background: #f1f2f4
+
+a
+  color: #33567f
+
+a:hover
+  text-decoration: none
+
+
+input[type=text], input[type=tel], input[type=password], input[type=email], textarea
+  +box-sizing(border-box)
+  padding: 7px 12px
+  border: 1px solid #e3e3e3
+
+textarea
+  height: 200px
+
+@import "blocks/*"

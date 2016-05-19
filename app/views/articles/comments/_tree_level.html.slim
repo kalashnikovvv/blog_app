@@ -1,0 +1,7 @@
+- comments.each do |comment, nested_comments|
+  li.b-comment-tree_node
+    = render "articles/comments/item", comment: comment
+
+    - if nested_comments.present?
+      ul.b-comment-tree_nodes@comment_replies
+        = render "articles/comments/tree_level", comments: nested_comments

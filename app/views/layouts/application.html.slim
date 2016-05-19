@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    title Blog App
+    = stylesheet_link_tag "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+
+    link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&subset=latin,cyrillic" rel="stylesheet" type="text/css"
+
+body
+  = render "layouts/application/header"
+  .b-center
+    - if content_for?(:content_header)
+      = yield :content_header
+    - elsif content_for?(:content_title)
+      h1.m-content-header
+        = yield :content_title
+
+    - if content_for?(:sidebar)
+      .b-column.b-column_left
+        = yield
+      .b-column.b-column_right
+        = yield(:sidebar)
+    - else
+      = yield
+  = render "shared/flash_messages"

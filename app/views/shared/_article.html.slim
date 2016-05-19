@@ -1,0 +1,22 @@
+.b-article
+  h3.b-article_title
+    = link_to article.title, article_path(article)
+  - if show_actions
+    - unless article.visible?
+      .b-article_visibility= fa_icon("eye-slash")
+    .b-article_actions
+      - if policy(article).edit?
+        = link_to fa_icon("pencil"), edit_article_path(article), class: "b-article_action"
+      - if policy(article).destroy?
+        = link_to fa_icon("times"), article_path(article), method: :delete, "data-confirm" => t("confirm"), class: "b-article_action"
+  .b-clr
+  .b-article_info
+    .b-article_author= link_to article.user.username, user_articles_path(article.user)
+    .b-article_date= I18n.l(article.publish_date)
+
+    - if article.tags.present?
+      ul.b-article_tags
+        - article.tags.each do |tag|
+          li.b-article_tag= link_to tag, root_path(tag: tag), class: "b-badge"
+    .b-clr
+  .b-article_text= article.text

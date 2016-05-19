@@ -1,0 +1,14 @@
+- cache("tagcloud", expires_in: 1.hour) do
+  .m-tagcloud
+    h3.m-tagcloud_title= t(".title")
+    div
+      - Article.tags_cloud { visible }.each do |tag, rating|
+        => link_to tag, root_path(tag: tag), rel: rating, role: "tagcloud-link"
+
+coffee:
+  $ ->
+    $("@tagcloud-link").tagcloud
+      size:
+        start: 12
+        end: 32
+        unit: "px"

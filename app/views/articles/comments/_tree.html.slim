@@ -1,0 +1,7 @@
+ul.b-comment-tree@comment-tree
+  .b-comment-tree_title= t(".title")
+  .b-comment-tree_add-comment
+    - if policy(:comment).create?
+      = link_to t(".add_comment"), "#", role: "add_comment", data: { article_id: @article.id }, class: "b-comment-tree_add-comment-btn"
+  ul.b-comment-tree_nodes@comment-tree
+    = render "articles/comments/tree_level", comments: @comments

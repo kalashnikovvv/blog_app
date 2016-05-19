@@ -1,0 +1,8 @@
+- content_for(:content_title) do
+  - if current_user?(@user)
+    = t(".title.current_user")
+  - else
+    = t(".title.other_user", author: @user.username)
+end
+
+= render "shared/articles", articles: @articles, show_actions: current_user?(@user)

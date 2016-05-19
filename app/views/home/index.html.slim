@@ -1,0 +1,4 @@
+- content_for :sidebar do
+  = render "shared/tagcloud"
+
+= render "shared/articles", articles: @articles, show_actions: false

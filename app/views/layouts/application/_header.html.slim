@@ -1,0 +1,17 @@
+- logo_title = "BlogApp"
+
+header.m-header
+  .b-center
+    .logo
+      = link_to logo_title, root_path, class: "logo_link"
+    nav.menu
+      = link_to t(".menu.statics"), statics_path, class: "menu_item"
+      - if current_user
+        = link_to t(".menu.new_article"), new_article_path, class: "b-btn menu_item new-article"
+        = link_to t(".menu.articles"), user_articles_path(current_user), class: "menu_item"
+        = link_to t(".menu.profile"), edit_user_path(current_user), class: "menu_item"
+        = link_to t(".menu.logout"), logout_path, method: :post, class: "menu_item"
+      - else
+        = link_to t(".menu.signup"), signup_path, class: "menu_item"
+        = link_to t(".menu.login"), login_path, class: "menu_item"
+    .b-clr

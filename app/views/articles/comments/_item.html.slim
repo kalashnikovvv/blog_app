@@ -1,0 +1,14 @@
+.b-comment@comment data = { article_id: comment.article_id, comment_id: comment.id }
+  .b-comment_actions
+    - if policy(comment).edit?
+      = link_to fa_icon("pencil"), "#", class: "b-comment_action", role: "comment_edit"
+    - if policy(comment).destroy?
+      = link_to fa_icon("times"), article_comment_path(comment.article_id, comment), method: :delete, remote: true,
+        "data-confirm" => t("confirm"), class: "b-comment_action", role: "comment_remove"
+  .b-comment_info
+    = link_to comment.user.username, user_articles_path(comment.user), class: "b-comment_author"
+    .b-comment_date= I18n.l(comment.created_at.to_date)
+    .b-clr
+  .b-comment_text= comment.text
+  - if policy(:comment).create?
+    .b-comment_reply@comment_reply= t(".reply")

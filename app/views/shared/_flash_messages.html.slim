@@ -1,0 +1,8 @@
+javascript:
+  var flash_messages = #{flash.to_hash.to_json.html_safe};
+  for(type in flash_messages) {
+    text = flash_messages[type];
+    var msg_type_mapping = {notice: 'success', alert: 'error'};
+    msg_type = msg_type_mapping[type];
+    toastr[msg_type](text, {timeout: 10000});
+  }

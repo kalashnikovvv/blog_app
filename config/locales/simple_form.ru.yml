@@ -1,0 +1,13 @@
+ru:
+  helpers:
+    submit:
+      create: Создать
+      update: Сохранить
+      user_session_form:
+        create: Войти
+      user:
+        create: Зарегистрироваться
+  simple_form:
+    hints:
+      article:
+        tags_string: Разделяйте теги пробелами

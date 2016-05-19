@@ -1,0 +1,6 @@
+= render "shared/article", article: @article, show_actions: current_user?(@article.user)
+= render "articles/comments/tree"
+
+coffee:
+  $ ->
+    new CommentTree $("@comment-tree")

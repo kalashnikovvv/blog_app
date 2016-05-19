@@ -1,0 +1,7 @@
+- parent_id = defined?(parent_id) ? parent_id : ""
+
+= basic_form_for [@article, comment], remote: true, html: { class: "b-comment-reply-form", role: "comment_form" } do |f|
+  - if parent_id
+    = f.hidden_field :parent_id, value: parent_id
+  = f.input :text
+  = f.button :submit

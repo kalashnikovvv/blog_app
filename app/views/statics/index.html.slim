@@ -1,0 +1,20 @@
+.b-slider
+  .b-slider_images@slider
+    - 4.times do |i|
+      = image_tag "slider/#{i + 1}.jpg"
+    a href="#" class="slidesjs-previous slidesjs-navigation b-slider_prev" <<
+    a href="#" class="slidesjs-next slidesjs-navigation b-slider_next" >>
+  .b-slider_info
+    .b-slider_text Фотография вашего ребенка позавидуют даже звезды
+    .b-slider_btn Начать обучение
+
+
+coffee:
+  $ ->
+    $("@slider").slidesjs
+      width: 940,
+      height: 350,
+      navigation:
+        active: false, effect: "fade"
+      pagination:
+        active: false

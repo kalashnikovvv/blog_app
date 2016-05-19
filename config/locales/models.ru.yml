@@ -1,0 +1,28 @@
+ru:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              invalid_email: неверного формата
+            username:
+              invalid: может состоять только из букв, цифр и _
+    attributes:
+      article:
+        title: Заголовок
+        text: Текст
+        publish_date: Дата публикации
+        visible: Видимость
+        tags_string: Тэги
+      user:
+        username: Логин
+        password: Пароль
+        password_confirmation: Подтверждение пароля
+      comment:
+        text: Текст
+  activemodel:
+    attributes:
+      user_session_form:
+        password: Пароль
+        email: Логин или email

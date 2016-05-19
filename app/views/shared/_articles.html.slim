@@ -1,0 +1,11 @@
+.m-articles
+  - if params[:tag].present?
+    .m-articles_tags-title= t(".selected_tag")
+    .b-badge.m-articles_tag
+      = params[:tag]
+      = link_to fa_icon(:times), url_for(tag: nil), class: "b-badge_icon"
+    .b-clr
+  ul
+    - articles.each do |article|
+      li= render "shared/article", article: article, show_actions: show_actions
+  = paginate articles

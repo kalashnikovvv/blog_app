@@ -1,0 +1,4 @@
+- rel = (page.next? ? 'next' : (page.prev? ? 'prev' : nil))
+
+span.b-pagination_page class=('current' if page.current?)
+  = link_to_unless page.current?, page, url, {remote: remote, rel: rel}

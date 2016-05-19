@@ -1,0 +1,46 @@
+.b-form
+  .b-form_line
+    margin-bottom: 16px
+
+    &.errors
+      .text, .string, .password
+        border-color: red
+
+      .b-radio
+        color: red
+
+  .b-form_label, .b-form_field
+    +box-sizing(border-box)
+
+  .b-form_label
+    display: inline-block
+    padding: 8px 20px 0 0
+    width: 20%
+    vertical-align: top
+
+    &.required abbr
+      color: red
+
+  .b-form_field
+    display: inline-block
+    width: 80%
+
+    .b-radio
+      display: block
+      margin-bottom: 8px
+
+    .text, .string, .password
+      width: 100%
+
+  .b-btn
+    margin-left: 20%
+
+  .b-form_error
+    display: block
+    color: red
+
+  .b-form_hint
+    margin-top: 6px
+    font-size: 14px
+    font-style: italic
+    color: #747474
